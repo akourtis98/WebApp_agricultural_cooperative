@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 5, 2018 1:12:43 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="database.Transactions" table="transactions" catalog="project2_databases">
+        <composite-id name="id" class="database.TransactionsId">
+            <key-property name="transactionId" type="int">
+                <column name="transaction_id" />
+            </key-property>
+            <key-property name="fromId" type="int">
+                <column name="from_id" />
+            </key-property>
+            <key-property name="toId" type="int">
+                <column name="to_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="usersByFromId" class="database.Users" update="false" insert="false" fetch="select">
+            <column name="from_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usersByToId" class="database.Users" update="false" insert="false" fetch="select">
+            <column name="to_id" not-null="true" />
+        </many-to-one>
+        <property name="amount" type="double">
+            <column name="amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="transactionDate" type="timestamp">
+            <column name="transaction_date" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

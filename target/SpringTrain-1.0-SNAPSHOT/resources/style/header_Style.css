@@ -1,0 +1,116 @@
+#pre_header {
+  background-color: white;
+  width: 1280px;
+  height: 110px;
+  position: relative;
+  margin: auto;
+}
+#pre_header p{
+  user-select: auto;
+  cursor: auto;
+}
+#logoPlaceHolder {
+  height: 100%;
+  background: url("../images/logo.jpg");
+  width: 300px;
+  float: left;
+  background-color: black;
+  display: inline-block;
+}
+.header_constraint {
+  border: px solid transparent;
+  width: 1280px;
+  height: 50px;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+}
+#iconsConatiner{
+  border: px solid black;
+  float: right;
+  display: inline-block;
+  position: relative;
+  top: 70%;
+  width: 500px;
+
+}
+.marginIcons{
+  margin-left: 10px;
+  margin-right: 5px;
+  font-size: 20px;
+    color: black !important;
+  float: right;
+  user-select: none;
+  cursor: pointer;
+}
+#flag{
+  width: 100px;
+  cursor: pointer;
+  height: 35px;
+  float: right;
+  text-align: right;
+  right: -30px;
+  position: absolute;
+  display: inline-block;
+}
+
+.flag-icon-gr {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/flags/1x1/gr.svg");
+  background-size: 100% 100%;
+}
+.glyphicon{
+  font-size: 30px;
+  text-decoration: none !important;
+
+}
+.headings {
+  float: left;
+  display: inline-block;
+  color: black;
+  font-size: 22px;
+  padding-left: 30px;
+  padding-right: 10px;
+  cursor: pointer;
+  padding-top: 8.5px;
+  border: px dotted red;
+  transition: 0.3s ease;
+}
+.headings:hover {
+  color: black;
+}
+input {
+  outline: none;
+}
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  cursor: auto;
+  font-family: inherit;
+  font-size: 100%;
+  margin-top: 9px;
+  margin-left: 20px;
+  color: black;
+}
+input::-webkit-s4arch-decoration, input::-webkit-search-cancel-button {
+  display: none;
+}
+input[type=search] {
+  background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  border: solid 1px #ccc;
+  padding: 4px 5px 4px 32px;
+  width: 130px;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 5px;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+}
+input[type=search]:focus {
+  width: 230px;
+  background-color: #fff;
+  border-color: #87CEEB;
+  -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+  -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+  box-shadow: 5 5 5px rgba(109, 207, 246, .5);
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 5, 2018 1:12:43 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="database.ShoppingCart" table="shopping_cart" catalog="project2_databases">
+        <composite-id name="id" class="database.ShoppingCartId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="usersId" type="int">
+                <column name="users_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="users" class="database.Users" update="false" insert="false" fetch="select">
+            <column name="users_id" not-null="true" />
+        </many-to-one>
+        <property name="total" type="double">
+            <column name="total" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="shoppingCartDate" type="timestamp">
+            <column name="shopping_cart_date" length="19" />
+        </property>
+        <set name="ordersHasProductses" table="orders_has_products" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="shopping_cart_id" />
+                <column name="shopping_cart_users_id" />
+            </key>
+            <one-to-many class="database.OrdersHasProducts" />
+        </set>
+    </class>
+</hibernate-mapping>

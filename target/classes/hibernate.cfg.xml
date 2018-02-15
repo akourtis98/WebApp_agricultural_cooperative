@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/project2_databases?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
+    <property name="hibernate.transaction.auto_close_session">true</property>
+    <mapping resource="database/Transactions.hbm.xml"/>
+    <mapping resource="database/Categories.hbm.xml"/>
+    <mapping resource="database/OrdersHasProducts.hbm.xml"/>
+    <mapping resource="database/Orders.hbm.xml"/>
+    <mapping resource="database/Wishlist.hbm.xml"/>
+    <mapping resource="database/Account.hbm.xml"/>
+    <mapping resource="database/Products.hbm.xml"/>
+    <mapping resource="database/Users.hbm.xml"/>
+    <mapping resource="database/ShoppingCart.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

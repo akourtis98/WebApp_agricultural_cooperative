@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 5, 2018 1:12:43 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="database.Users" table="users" catalog="project2_databases">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="45" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="45" not-null="true" />
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="45" not-null="true" />
+        </property>
+        <set name="orderses" table="orders" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="users_id" not-null="true" />
+            </key>
+            <one-to-many class="database.Orders" />
+        </set>
+        <set name="shoppingCarts" table="shopping_cart" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="users_id" not-null="true" />
+            </key>
+            <one-to-many class="database.ShoppingCart" />
+        </set>
+        <set name="transactionsesForToId" table="transactions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="to_id" not-null="true" />
+            </key>
+            <one-to-many class="database.Transactions" />
+        </set>
+        <set name="transactionsesForFromId" table="transactions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="from_id" not-null="true" />
+            </key>
+            <one-to-many class="database.Transactions" />
+        </set>
+        <set name="wishlists" table="wishlist" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="users_id" not-null="true" />
+            </key>
+            <one-to-many class="database.Wishlist" />
+        </set>
+        <set name="accounts" table="account" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="users_id" not-null="true" />
+            </key>
+            <one-to-many class="database.Account" />
+        </set>
+        <set name="productses" table="users_has_products" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="users_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="database.Products">
+                <column name="products_id" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

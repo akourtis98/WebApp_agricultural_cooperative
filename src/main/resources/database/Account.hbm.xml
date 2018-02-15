@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 5, 2018 1:12:43 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="database.Account" table="account" catalog="project2_databases">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="users" class="database.Users" fetch="select">
+            <column name="users_id" not-null="true" />
+        </many-to-one>
+        <property name="amount" type="double">
+            <column name="amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="moneyShare" type="java.lang.Double">
+            <column name="moneyShare" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

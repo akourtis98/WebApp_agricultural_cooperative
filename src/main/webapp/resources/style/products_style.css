@@ -1,0 +1,34 @@
+body{
+	 text-align: center;
+}
+#containerItems {
+	width: 1280px;
+	height: 860px;
+	display: inline-block;
+	margin: auto;
+	border: px dotted black;
+}
+p {
+	font-family: Raleway;
+}
+#inBetween {
+	width: 100%;
+	height: 50px;
+	border: px dotted black;
+	 display: inline-block;
+}
+#selectorIDView{
+	width: 100px;
+	float: right;
+	padding: 0px;
+	margin-right:64px;
+}
+#selectorID{
+	width: 100px;
+	float: right;
+	padding: 0px;
+	margin-right:10px;
+}
+#inBetween select{
+	font-size: 15px;
+}

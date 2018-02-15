@@ -1,0 +1,17 @@
+
+#googleMap{
+    width: 1280px;
+    height: 500px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 0px;
+}
+
+#dashboard_panel{
+	position: relative;
+	width: 1280px;
+	margin: auto;
+	height: 795px;
+	border: px solid red;
+}
